@@ -1,0 +1,33 @@
+<div class="header-container">
+  <div class="nav-wrapper">
+    <ul class="nav">
+      <!-- Board Link -->
+      <li class="nav-item" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <a routerLink="/app-board">
+          <span class="material-icons">view_kanban</span> <!-- Icon for Board -->
+          Board
+        </a>
+      </li>
+      
+      <!-- Calendar Link -->
+      <li class="nav-item" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <a routerLink="/app-calendar">
+          <span class="material-icons">calendar_today</span> <!-- Icon for Calendar -->
+          Calendar
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="header-right">
+    <div class="search-box">
+      <span class="material-icons">search</span>
+      <input type="text" placeholder="Search...">
+    </div>
+    <div class="icons">
+      <span class="material-icons">chat</span> <!-- Message Icon -->
+      <span class="material-icons">notifications</span> <!-- Notification Icon -->
+      <span class="user-avatar"></span>
+    </div>
+  </div>
+</div>

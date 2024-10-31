@@ -1,0 +1,46 @@
+<div class="sidenav" [ngClass]="isLeftSidebarCollapsed ? 'sidenav-collapsed' : ''">
+  <div class="logo-container" (click)="toggleCollapse()">
+    <div class="logo">
+      <img
+        src="https://github.com/user-attachments/assets/864695df-f812-4900-b054-899df8c9eeb8"
+        alt="FocusPad logo"
+        class="logo-image"
+      />
+      <div class="logo-text">FocusPad</div>
+    </div>
+    <button class="btn-toggle" (click)="toggleCollapse()">
+      <i class="material-icons">
+        {{ isLeftSidebarCollapsed ? 'chevron_right' : 'chevron_left' }}
+      </i>
+    </button>
+  </div>
+
+  <ul class="sidenav-nav">
+    <li *ngFor="let item of items" class="sidenav-nav-item">
+      <a class="sidenav-nav-link" [routerLink]="item.routeLink" routerLinkActive="active">
+        <i class="material-icons sidenav-link-icon">{{ item.icon }}</i>
+        <span class="sidenav-link-text" *ngIf="!isLeftSidebarCollapsed">{{ item.label }}</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="sidenav-section">
+    <div class="section-title" *ngIf="!isLeftSidebarCollapsed">
+      Add Lists
+      <button class="add-list-button">
+        <i class="material-icons">add</i>
+      </button>
+    </div>
+    <ul class="sidenav-list">
+      <li *ngFor="let list of lists" class="sidenav-list-item">
+        <span class="list-dot" [style.background-color]="list.color"></span>
+        <span class="list-name" *ngIf="!isLeftSidebarCollapsed">{{ list.name }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <button class="new-task-button">
+    <i class="material-icons">add_circle</i>
+    <span *ngIf="!isLeftSidebarCollapsed">New Task</span>
+  </button>
+</div>

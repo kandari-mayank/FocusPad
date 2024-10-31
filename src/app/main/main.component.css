@@ -1,0 +1,13 @@
+.body {
+  margin-left: 15%;
+  transition: all 0.3s ease; /* Smooth transition */
+  padding: 3rem;
+}
+
+
+@media (max-width: 768px) {
+  .body {
+    width: calc(100% - 5rem);
+    margin-left: 5rem;
+  }
+}

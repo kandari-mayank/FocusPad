@@ -1,0 +1,159 @@
+.sidenav {
+  background: #ffffff;
+  transition: all 0.3s ease;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 14rem; /* Expanded width */
+  height: 100vh;
+  box-shadow: 0.063rem 0 1.25rem 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidenav-collapsed {
+  width: 5rem; /* Collapsed width */
+  overflow-x: hidden;
+}
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 36px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #012a5b;
+}
+
+.btn-toggle {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sidenav-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+}
+
+.sidenav-nav-item {
+  width: 100%;
+}
+
+.sidenav-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #6c757d;
+  transition: background 0.3s;
+  border-radius: 0.375rem;
+}
+
+.sidenav-link-icon {
+  font-size: 20px;
+  margin-right: 0.5rem;
+}
+
+.sidenav-link-text {
+  font-size: 14px;
+}
+
+.active {
+  background-color: #e8f0fe;
+  color: #012a5b;
+}
+
+.sidenav-section {
+  padding: 1rem;
+  margin-top: 0.5rem;
+  flex-grow: 1; /* Allows this section to take up remaining space */
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #012a5b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-list-button {
+  background: none;
+  border: none;
+  color: #012a5b;
+  cursor: pointer;
+}
+
+.sidenav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidenav-list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.sidenav-list-item:hover {
+  background-color: #f9f9f9;
+}
+
+.list-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.new-task-button {
+  background: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1.25rem;
+  margin: 3rem; /* Provides a gap between the button and the bottom */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  align-self: center; /* Centers the button horizontally */
+  margin-top: auto; /* Pushes the button to the bottom */
+}
+
+.new-task-button:hover {
+  background-color: #0056b3;
+}
+
+.sidenav-collapsed .logo img,
+.sidenav-collapsed .logo-text,
+.sidenav-collapsed .sidenav-link-text,
+.sidenav-collapsed .section-title,
+.sidenav-collapsed .list-name {
+  display: none;
+}

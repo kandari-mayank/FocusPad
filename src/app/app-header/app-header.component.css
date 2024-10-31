@@ -1,0 +1,102 @@
+/* Header Container Styles */
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Space between navigation and right section */
+  align-items: center; /* Center items vertically */
+  height: 100px;
+  background-color: #FFFFFF;
+  padding: 0 24px;
+  border-bottom: 1px solid #EEF2F6;
+}
+
+/* Navigation Wrapper to Center Items */
+.nav-wrapper {
+  flex: 1; /* Take full available width */
+  display: flex;
+  justify-content: center; /* Center the navigation items */
+}
+
+/* Navigation Styles */
+.nav {
+  display: flex;
+  gap: 30px;
+  margin: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  color: #94A3B8;
+  cursor: pointer;
+  border-bottom: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-item a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-item .material-icons {
+  color: #94A3B8;
+  transition: color 0.3s ease;
+}
+
+.nav-item.active {
+  color: #306BFF;
+  border-bottom: 2px solid #306BFF;
+}
+
+.nav-item.active .material-icons {
+  color: #306BFF;
+}
+
+/* Header Right Section Styles */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #F5F7FA;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.material-icons {
+  font-size: 24px;
+  color: #94A3B8;
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #FF00FF;
+  border-radius: 50%;
+}

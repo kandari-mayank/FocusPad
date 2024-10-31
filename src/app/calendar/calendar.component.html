@@ -1,0 +1,70 @@
+<div class="calendar-container">
+  <div class="calendar shadowed">
+    <div class="calendar-header">
+      <button class="nav-button" (click)="goToPreviousMonth()">&#8249;</button>
+      <div class="calendar-month">
+        {{ firstDayOfActiveMonth().monthShort }} {{ firstDayOfActiveMonth().year }}
+      </div>
+      <button class="nav-button" (click)="goToNextMonth()">&#8250;</button>
+    </div>
+    <button class="today-button" (click)="goToToday()">Today</button>
+
+    <div class="calendar-weekdays">
+      @for (weekDay of weekDays(); track $index) {
+        <div class="calendar-weekday">{{ weekDay }}</div>
+      }
+    </div>
+
+    <div class="calendar-days">
+      @for (dayOfMonth of daysOfMonth(); track $index) {
+        <div
+          class="calendar-day"
+          [ngClass]="{
+            'active': activeDay()?.toISODate() === dayOfMonth.toISODate(),
+            'inactive': dayOfMonth.month !== firstDayOfActiveMonth().month
+          }"
+          (click)="activeDay.set(dayOfMonth)"
+        >
+          {{ dayOfMonth.day }}
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="schedule">
+    <div class="schedule-header">
+      <div class="schedule-day">
+        @if (activeDay(); as activeDay) {
+          <div class="selected-date">{{ activeDay.toLocaleString(DATE_MED) }}</div>
+        } @else {
+          <div class="no-date-selected">Please select a day</div>
+        }
+      </div>
+    </div>
+    <div class="schedule-events">
+      @if (activeDay() && activeDayMeetings().length === 0) {
+        <div class="no-events">No Events</div>
+      }
+      @for (meeting of activeDayMeetings(); track $index) {
+        <div class="event">{{ meeting }}</div>
+      }
+    </div>
+
+    <!-- Add Event Button at the Bottom Right -->
+    <button class="add-event-button" (click)="showAddEventPopup = true">+ Add Event</button>
+  </div>
+
+  <!-- Add Event Popup Modal -->
+  @if (showAddEventPopup) {
+    <div class="modal-overlay" (click)="showAddEventPopup = false">
+      <div class="modal" (click)="$event.stopPropagation()">
+        <h3>Add Event</h3>
+        <input type="text" [(ngModel)]="newEvent" placeholder="Event Name" />
+        <input type="time" [(ngModel)]="eventTimeFrom" placeholder="Event Time From" />
+        <input type="time" [(ngModel)]="eventTimeTo" placeholder="Event Time To" />
+        <button (click)="addEvent()">Add Event</button>
+        <button (click)="showAddEventPopup = false">Cancel</button>
+      </div>
+    </div>
+  }
+</div>
